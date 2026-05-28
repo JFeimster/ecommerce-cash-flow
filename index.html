@@ -3,24 +3,1487 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ecommerce Cash Flow Forecaster GPT</title>
-<meta name="description" content="A 90-day ecommerce cash flow forecasting GPT for sellers who need to spot cash gaps, inventory pressure, and working capital needs before cash gets tight." />
+<title>Ecommerce Cash Flow Forecaster GPT | 90-Day Cash Flow Planner for Online Sellers</title>
+<meta name="description" content="A 90-day ecommerce cash flow forecasting assistant for Shopify, Amazon, TikTok Shop, Etsy, and DTC sellers who need to spot inventory pressure, ad spend burn, payout delays, and working capital gaps before cash gets tight." />
 <style>
-:root{--bg:#f7f5f0;--paper:#fffdf8;--ink:#1f2933;--muted:#64748b;--line:#e7e0d4;--blue:#2563eb;--green:#0f766e;--orange:#ea580c;--red:#dc2626;--dark:#101828;--shadow:0 20px 60px rgba(15,23,42,.10)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#e0f2fe 0,#f7f5f0 34%,#fff7ed 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.shell{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:54px}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--green));display:grid;place-items:center;color:white;box-shadow:var(--shadow)}.nav a{color:var(--muted);text-decoration:none;font-weight:650}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 18px;font-weight:800;text-decoration:none;border:1px solid var(--line);color:var(--dark);background:white}.button.primary{background:var(--dark);color:white;border-color:var(--dark)}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:13px;font-weight:800}.hero h1{font-size:clamp(42px,7vw,72px);line-height:.95;letter-spacing:-.055em;margin:18px 0}.lead{font-size:20px;color:#475569;max-width:680px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.panel{background:rgba(255,253,248,.86);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:24px}.forecast-card{min-height:520px}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}.metric{background:white;border:1px solid var(--line);border-radius:18px;padding:16px}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:850}.value{font-size:27px;font-weight:900;margin-top:4px}.risk{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line)}.pill{border-radius:999px;padding:5px 10px;font-size:12px;font-weight:900}.pill.green{background:#dcfce7;color:#166534}.pill.orange{background:#ffedd5;color:#9a3412}.pill.red{background:#fee2e2;color:#991b1b}.bar{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--orange),var(--red));width:72%}section{margin-top:70px}.section-head{max-width:740px}.section-head h2{font-size:38px;letter-spacing:-.035em;line-height:1.05;margin:0 0 12px}.section-head p{color:var(--muted);font-size:18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}.card h3{margin:0 0 8px}.card p,.card li{color:#526173}.icon{font-size:28px;margin-bottom:12px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.step{background:white;border:1px solid var(--line);border-radius:20px;padding:18px}.step b{display:block;margin-bottom:8px}.quote{background:#101828;color:white;border-radius:28px;padding:34px;margin-top:28px}.quote p{font-size:24px;line-height:1.35;margin:0}.embed-preview{background:#0f172a;border-radius:28px;padding:18px;box-shadow:var(--shadow);margin-top:24px}.embed-frame{background:white;border-radius:20px;min-height:520px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden}.mini-table th,.mini-table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px}.mini-table th{background:#f8fafc}.footer{margin-top:70px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:24px}@media(max-width:860px){.hero,.embed-frame{grid-template-columns:1fr}.grid,.flow{grid-template-columns:1fr}.forecast-card{min-height:auto}.nav{align-items:flex-start;flex-direction:column}}
+:root {
+  --bg: #f6f1e8;
+  --bg-soft: #fffaf1;
+  --paper: #fffdf7;
+  --ink: #101828;
+  --ink-2: #1f2937;
+  --muted: #65758b;
+  --muted-2: #94a3b8;
+  --line: rgba(15, 23, 42, 0.12);
+  --line-dark: rgba(255, 255, 255, 0.12);
+  --dark: #08111f;
+  --dark-2: #0f172a;
+  --dark-3: #111827;
+  --blue: #2563eb;
+  --cyan: #06b6d4;
+  --green: #0f766e;
+  --lime: #84cc16;
+  --amber: #f59e0b;
+  --orange: #ea580c;
+  --red: #dc2626;
+  --gold: #d6a84f;
+  --cream: #fff7e5;
+  --shadow: 0 28px 80px rgba(15, 23, 42, 0.16);
+  --shadow-soft: 0 18px 48px rgba(15, 23, 42, 0.08);
+  --radius-xl: 34px;
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18) 0, transparent 29%),
+    radial-gradient(circle at top right, rgba(214, 168, 79, 0.22) 0, transparent 28%),
+    linear-gradient(180deg, #fffaf0 0%, var(--bg) 44%, #fffdf7 100%);
+}
+
+a {
+  color: inherit;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 250, 241, 0.78);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.nav-shell {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: -0.05em;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.5), transparent 28%),
+    linear-gradient(135deg, #2563eb 0%, #0f766e 48%, #d6a84f 100%);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.24);
+}
+
+.nav-links,
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 9px 10px;
+  border-radius: 999px;
+}
+
+.nav-links a:hover {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--ink);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-weight: 900;
+  text-decoration: none;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  color: var(--dark);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+  border-color: rgba(15, 23, 42, 0.24);
+}
+
+.button.primary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.2), transparent 30%),
+    linear-gradient(135deg, #111827 0%, #0f172a 55%, #123c69 100%);
+}
+
+.button.gold {
+  color: #111827;
+  border-color: rgba(214, 168, 79, 0.55);
+  background: linear-gradient(135deg, #ffe9aa 0%, #facc15 48%, #d6a84f 100%);
+}
+
+.button.dark {
+  color: #fff;
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.button.ghost-dark {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.button:focus-visible,
+.nav-links a:focus-visible,
+.footer-links a:focus-visible,
+.resource-card:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 3px;
+}
+
+.shell {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 54px 20px 70px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+  gap: 38px;
+  align-items: center;
+  padding: 48px 0 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.09);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+}
+
+.eyebrow.dark {
+  color: #bae6fd;
+  background: rgba(14, 165, 233, 0.12);
+  border-color: rgba(125, 211, 252, 0.22);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7.8vw, 88px);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+  margin: 20px 0 20px;
+  color: var(--ink);
+}
+
+.hero h1 span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(135deg, #111827 0%, #1d4ed8 48%, #0f766e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.lead {
+  font-size: clamp(18px, 2.1vw, 22px);
+  color: #475569;
+  max-width: 720px;
+  margin: 0;
+}
+
+.hero-copy strong {
+  color: #111827;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.trust-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 999px;
+  padding: 9px 12px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.dashboard {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 1px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(37, 99, 235, 0.28), rgba(214, 168, 79, 0.55)),
+    linear-gradient(135deg, #ffffff, #e2e8f0);
+  box-shadow: var(--shadow);
+}
+
+.dashboard::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: -1;
+  border-radius: 50px;
+  background:
+    radial-gradient(circle at 70% 12%, rgba(37, 99, 235, 0.22), transparent 34%),
+    radial-gradient(circle at 18% 88%, rgba(245, 158, 11, 0.2), transparent 36%);
+  filter: blur(4px);
+}
+
+.dashboard-inner {
+  border-radius: calc(var(--radius-xl) - 1px);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(37, 99, 235, 0.14), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #fffaf1 100%);
+  padding: 22px;
+  overflow: hidden;
+}
+
+.dashboard-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.dashboard-top h2 {
+  margin: 6px 0 2px;
+  font-size: 24px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid rgba(22, 101, 52, 0.18);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.status-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 99px;
+  box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.15);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.metric {
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 38%),
+    rgba(255, 255, 255, 0.82);
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.095em;
+  font-weight: 950;
+}
+
+.value {
+  display: block;
+  font-size: 28px;
+  font-weight: 950;
+  margin-top: 4px;
+  letter-spacing: -0.055em;
+  color: #111827;
+}
+
+.metric small {
+  display: block;
+  margin-top: 2px;
+  color: #64748b;
+  font-weight: 750;
+}
+
+.alert-card {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(254, 243, 199, 0.98), rgba(255, 237, 213, 0.94));
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+
+.alert-card strong {
+  display: block;
+  color: #92400e;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.alert-card p {
+  margin: 0;
+  color: #78350f;
+  font-weight: 750;
+}
+
+.risk-list {
+  margin-top: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.risk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 15px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.risk:last-child {
+  border-bottom: 0;
+}
+
+.risk span:first-child {
+  font-weight: 850;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.pill.green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill.orange {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.pill.red {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.pill.blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.pressure {
+  margin-top: 18px;
+}
+
+.pressure-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  color: #475569;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.bar {
+  height: 13px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 73%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0f766e 0%, #f59e0b 54%, #dc2626 100%);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 0.6fr 0.9fr 1fr;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.timeline div {
+  min-height: 46px;
+  border-radius: 14px;
+  padding: 9px 10px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.timeline strong {
+  display: block;
+  color: #111827;
+  font-size: 13px;
+}
+
+.section {
+  margin-top: 92px;
+}
+
+.section.tight {
+  margin-top: 66px;
+}
+
+.section-head {
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.section-head.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head h2 {
+  font-size: clamp(34px, 4.8vw, 56px);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+
+.section-head p {
+  margin: 0;
+  color: #526173;
+  font-size: 18px;
+}
+
+.dark-section {
+  color: #fff;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(37, 99, 235, 0.28), transparent 30%),
+    radial-gradient(circle at 90% 18%, rgba(214, 168, 79, 0.18), transparent 28%),
+    linear-gradient(135deg, #08111f 0%, #0f172a 48%, #111827 100%);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dark-section .section-head h2,
+.dark-section h2,
+.dark-section h3 {
+  color: #fff;
+}
+
+.dark-section .section-head p,
+.dark-section p {
+  color: #cbd5e1;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.pain-card {
+  min-height: 210px;
+  border: 1px solid var(--line-dark);
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 30%),
+    rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 22px;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.pain-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 30%),
+    rgba(255, 255, 255, 0.09);
+}
+
+.pain-card .icon,
+.utility-card .icon,
+.resource-icon {
+  font-size: 31px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.pain-card h3 {
+  margin: 0 0 9px;
+  font-size: 20px;
+  letter-spacing: -0.035em;
+}
+
+.pain-card p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.utility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.utility-card {
+  min-height: 286px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 32%),
+    var(--paper);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 26px;
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.utility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 58px rgba(15, 23, 42, 0.13);
+  border-color: rgba(37, 99, 235, 0.22);
+}
+
+.utility-card h3 {
+  margin: 0 0 9px;
+  font-size: 23px;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.utility-card p {
+  margin: 0;
+  color: #526173;
+}
+
+.operator-move {
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.workflow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.workflow::before {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(214, 168, 79, 0.85), rgba(37, 99, 235, 0.72), transparent);
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  min-height: 230px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #111827;
+  background: linear-gradient(135deg, #fde68a, #d6a84f);
+  font-weight: 950;
+  box-shadow: 0 18px 36px rgba(245, 158, 11, 0.18);
+  margin-bottom: 44px;
+}
+
+.step h3 {
+  margin: 0 0 9px;
+  font-size: 19px;
+  letter-spacing: -0.035em;
+}
+
+.step p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.embed-layout {
+  display: grid;
+  grid-template-columns: 0.84fr 1.16fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.embed-copy {
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.16), transparent 32%),
+    #fffdf7;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+}
+
+.embed-copy h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 12px 0 14px;
+}
+
+.embed-copy p {
+  color: #526173;
+  font-size: 17px;
+}
+
+.use-list {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.use-list span {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 850;
+  color: #334155;
+}
+
+.use-list span::before {
+  content: "✓";
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: #0f766e;
+  font-size: 13px;
+  margin-top: 1px;
+}
+
+.embed-device {
+  border-radius: 34px;
+  padding: 16px;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.35), transparent 31%),
+    linear-gradient(135deg, #08111f 0%, #0f172a 55%, #111827 100%);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.browser-bar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
+  background: #ef4444;
+}
+
+.browser-dot:nth-child(2) {
+  background: #f59e0b;
+}
+
+.browser-dot:nth-child(3) {
+  background: #22c55e;
+}
+
+.browser-url {
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iframe-wrap {
+  height: 660px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.resource-card {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.resource-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  letter-spacing: -0.035em;
+}
+
+.resource-card p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.resource-card strong {
+  display: inline-flex;
+  margin-top: 18px;
+  color: #fde68a;
+  font-size: 14px;
+}
+
+.final-cta {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.final-cta h2 {
+  font-size: clamp(36px, 5.8vw, 66px);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  margin: 0 0 18px;
+}
+
+.final-cta p {
+  font-size: 19px;
+  margin: 0;
+}
+
+.cta-panel {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 26px;
+}
+
+.cta-panel h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.cta-panel ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #cbd5e1;
+}
+
+.cta-panel li {
+  margin: 9px 0;
+}
+
+.footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.footer-inner {
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+  max-width: 760px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-links a {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 850;
+}
+
+.footer-links a:hover {
+  color: #111827;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1080px) {
+  .nav-shell {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links,
+  .nav-actions {
+    width: 100%;
+  }
+
+  .nav-actions {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .embed-layout,
+  .final-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    max-width: 720px;
+  }
+
+  .pain-grid,
+  .utility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workflow,
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workflow::before {
+    display: none;
+  }
+
+  .step-number {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 34px 16px 54px;
+  }
+
+  .nav-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .brand span {
+    max-width: 220px;
+    white-space: normal;
+    line-height: 1.1;
+  }
+
+  .nav-links a {
+    padding: 8px 9px;
+    font-size: 13px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 13px 15px;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 14vw, 68px);
+  }
+
+  .metric-grid,
+  .pain-grid,
+  .utility-grid,
+  .workflow,
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-section {
+    padding: 28px 18px;
+    border-radius: 28px;
+  }
+
+  .utility-card,
+  .pain-card,
+  .resource-card {
+    min-height: auto;
+  }
+
+  .section {
+    margin-top: 70px;
+  }
+
+  .section.tight {
+    margin-top: 52px;
+  }
+
+  .embed-copy {
+    padding: 24px;
+  }
+
+  .iframe-wrap {
+    height: 560px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
 </style>
 </head>
 <body>
+<header class="site-header">
+  <nav class="nav-shell" aria-label="Primary navigation">
+    <a class="brand" href="./" aria-label="Ecommerce Cash Flow Forecaster home">
+      <span class="logo">CF</span>
+      <span>Ecommerce Cash Flow Forecaster</span>
+    </a>
+
+    <div class="nav-links" aria-label="Resource navigation">
+      <a href="spreadsheet/">Planner</a>
+      <a href="prompts/">Prompts</a>
+      <a href="knowledge/">Docs</a>
+      <a href="marketing/">Marketing Kit</a>
+      <a href="releases/v1.0/">Release</a>
+    </div>
+
+    <div class="nav-actions">
+      <a class="button" href="embed.html">Embed Tool</a>
+      <a class="button primary" href="#get-started">Launch GPT</a>
+    </div>
+  </nav>
+</header>
+
 <main class="shell">
-<nav class="nav"><div class="brand"><div class="logo">CF</div><span>Ecommerce Cash Flow Forecaster GPT</span></div><a class="button" href="embed.html">View embed</a></nav>
-<section class="hero">
-<div><span class="eyebrow">90-day cash flow forecasting for sellers</span><h1>Know when cash gets tight before it becomes a crisis.</h1><p class="lead">A plainspoken GPT assistant that turns sales, ad spend, inventory, expense, bank, and marketplace reports into a 90-day cash flow forecast with working capital alerts and restock warnings.</p><div class="cta"><a class="button primary" href="#get-started">Launch the GPT</a><a class="button" href="#embed">Embed on your site</a></div></div>
-<aside class="panel forecast-card"><span class="eyebrow">Sample forecast</span><div class="metric-grid"><div class="metric"><div class="label">Cash low point</div><div class="value">$18.4k</div></div><div class="metric"><div class="label">Runway</div><div class="value">42 days</div></div><div class="metric"><div class="label">Funding gap</div><div class="value">$32k</div></div><div class="metric"><div class="label">Confidence</div><div class="value">Medium</div></div></div><div class="risk"><span>Inventory risk</span><span class="pill orange">High</span></div><div class="risk"><span>Ad spend risk</span><span class="pill orange">Medium</span></div><div class="risk"><span>Debt-service risk</span><span class="pill green">Low</span></div><p class="label" style="margin-top:18px">90-day pressure level</p><div class="bar"><span></span></div></aside>
-</section>
-<section><div class="section-head"><h2>Built for ecommerce operators, not finance jargon.</h2><p>The GPT asks for a minimum forecast intake, analyzes uploaded files, then explains the cash problem in plain English.</p></div><div class="grid"><article class="card"><div class="icon">📈</div><h3>Forecast cash runway</h3><p>Project daily or weekly cash balances using sales velocity, payout timing, expenses, debt, ads, and inventory commitments.</p></article><article class="card"><div class="icon">📦</div><h3>Spot inventory pressure</h3><p>Warn when restocking too late risks stockouts or restocking too early traps too much cash in inventory.</p></article><article class="card"><div class="icon">💸</div><h3>Flag funding triggers</h3><p>Identify working capital gaps without turning the experience into a pushy loan pitch.</p></article></div></section>
-<section><div class="section-head"><h2>How it works</h2></div><div class="flow"><div class="step"><b>1. Intake</b><span>Cash, revenue, margin, ads, inventory, debt, and buffer.</span></div><div class="step"><b>2. Upload</b><span>Shopify, Amazon, TikTok, Etsy, Stripe, PayPal, P&L, bank files.</span></div><div class="step"><b>3. Forecast</b><span>Conservative, Base, and Optimistic 90-day scenarios.</span></div><div class="step"><b>4. Act</b><span>Cut costs, adjust ads, delay purchases, restock, or explore funding.</span></div></div></section>
-<section id="embed"><div class="section-head"><h2>Website embed version included</h2><p>The repo includes an embeddable version sized at 960px wide by 1240px tall for landing pages, Wix, Webflow, WordPress, and Notion-style embeds.</p></div><div class="embed-preview"><div class="embed-frame"><div><h3>Embed dimensions</h3><p>Recommended iframe size: <strong>960 × 1240</strong>. It can also be used responsively with min-height: 1200px.</p><pre>&lt;iframe src="embed.html" width="960" height="1240"&gt;&lt;/iframe&gt;</pre></div><table class="mini-table"><tr><th>Input</th><th>Status</th></tr><tr><td>Current cash</td><td>Required</td></tr><tr><td>Gross margin</td><td>Required</td></tr><tr><td>Inventory plan</td><td>Required</td></tr><tr><td>Uploaded files</td><td>Optional</td></tr></table></div></div></section>
-<section id="get-started"><div class="quote"><p>“Your sales may be growing, but cash can still get squeezed if inventory and ad spend pull money out faster than payouts come in.”</p></div></section>
-<p class="footer">Forecasts are estimates based on uploaded data and user assumptions. This tool does not provide legal, tax, accounting, lending, investment, or financial advice.</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <span class="eyebrow">⚡ 90-Day Ecommerce Cash Flow Forecaster</span>
+      <h1 id="hero-title">Sales are up. <span>Cash is gone.</span> Now what?</h1>
+      <p class="lead">
+        Forecast the next 90 days before inventory, ad spend, payout delays, refunds, shipping costs, debt payments, and working capital gaps turn growth into a cash-flow ambush.
+      </p>
+
+      <div class="cta" aria-label="Primary actions">
+        <a class="button gold" href="#get-started">Start the 90-Day Forecast</a>
+        <a class="button" href="spreadsheet/">Download the Planner</a>
+        <a class="button" href="embed.html">View Embed Tool</a>
+      </div>
+
+      <div class="trust-row" aria-label="Supported ecommerce use cases">
+        <span class="trust-chip">🛒 Shopify sellers</span>
+        <span class="trust-chip">📦 Amazon operators</span>
+        <span class="trust-chip">🎥 TikTok Shop brands</span>
+        <span class="trust-chip">💳 Stripe / PayPal cash timing</span>
+      </div>
+    </div>
+
+    <aside class="dashboard" aria-label="Sample ecommerce cash flow dashboard">
+      <div class="dashboard-inner">
+        <div class="dashboard-top">
+          <div>
+            <span class="label">Sample forecast</span>
+            <h2>90-day pressure scan</h2>
+          </div>
+          <span class="status-dot">Live model</span>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="label">Cash low point</span>
+            <span class="value">$18.4k</span>
+            <small>Projected day 43</small>
+          </div>
+          <div class="metric">
+            <span class="label">Runway</span>
+            <span class="value">42 days</span>
+            <small>Before buffer breach</small>
+          </div>
+          <div class="metric">
+            <span class="label">Funding gap</span>
+            <span class="value">$32k</span>
+            <small>Working capital need</small>
+          </div>
+          <div class="metric">
+            <span class="label">Confidence</span>
+            <span class="value">Medium</span>
+            <small>More files improve it</small>
+          </div>
+        </div>
+
+        <div class="alert-card">
+          <strong>Funding trigger: Day 31</strong>
+          <p>Inventory reorder and ad spend collide before marketplace payouts catch up. Cute little knife fight in the cash account.</p>
+        </div>
+
+        <div class="risk-list">
+          <div class="risk">
+            <span>Stockout risk</span>
+            <span class="pill red">High</span>
+          </div>
+          <div class="risk">
+            <span>Ad spend burn</span>
+            <span class="pill orange">Elevated</span>
+          </div>
+          <div class="risk">
+            <span>Payout delay exposure</span>
+            <span class="pill orange">Medium</span>
+          </div>
+          <div class="risk">
+            <span>Debt-service drag</span>
+            <span class="pill green">Stable</span>
+          </div>
+        </div>
+
+        <div class="pressure">
+          <div class="pressure-head">
+            <span>90-day pressure level</span>
+            <span>73%</span>
+          </div>
+          <div class="bar" aria-label="90-day pressure level at 73 percent"><span></span></div>
+        </div>
+
+        <div class="timeline" aria-label="Cash flow timeline">
+          <div><strong>Day 1</strong>Cash starts clean</div>
+          <div><strong>Day 31</strong>Funding trigger</div>
+          <div><strong>Day 43</strong>Cash low point</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section tight dark-section" aria-labelledby="pain-title">
+    <div class="section-head">
+      <span class="eyebrow dark">🔥 Revenue is not cash</span>
+      <h2 id="pain-title">Growth can still punch a hole in your bank account.</h2>
+      <p>
+        Ecommerce operators do not usually die from lack of sales. They die from cash timing, inventory commitments, ad spend addiction, and payout delays wearing a fake mustache called “scale.”
+      </p>
+    </div>
+
+    <div class="pain-grid">
+      <article class="pain-card">
+        <div class="icon">📦</div>
+        <h3>Inventory Trap</h3>
+        <p>Restock too late and you stock out. Restock too early and your cash gets locked in boxes sitting on a shelf.</p>
+      </article>
+
+      <article class="pain-card">
+        <div class="icon">📣</div>
+        <h3>Ad Spend Burn</h3>
+        <p>ROAS can look fine while cash disappears because spend leaves today and profit limps in later.</p>
+      </article>
+
+      <article class="pain-card">
+        <div class="icon">⏳</div>
+        <h3>Payout Delay</h3>
+        <p>Shopify, Amazon, TikTok, Stripe, and PayPal do not care that your bills are due before deposits land.</p>
+      </article>
+
+      <article class="pain-card">
+        <div class="icon">🧾</div>
+        <h3>Debt Drag</h3>
+        <p>Daily, weekly, and monthly payments quietly turn healthy revenue into a treadmill with a payment processor.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="utility-title">
+    <div class="section-head center">
+      <span class="eyebrow">🧠 Built for operators, not spreadsheet monks</span>
+      <h2 id="utility-title">Turn messy seller data into decisions.</h2>
+      <p>
+        The GPT asks for a minimum forecast intake, reviews uploaded files when available, and explains the cash problem in plain English.
+      </p>
+    </div>
+
+    <div class="utility-grid">
+      <article class="utility-card">
+        <div>
+          <div class="icon">📈</div>
+          <h3>Forecast cash runway</h3>
+          <p>Project daily or weekly cash balances using revenue velocity, payout timing, expenses, debt, ad spend, and inventory commitments.</p>
+        </div>
+        <div class="operator-move">Operator move: know when the cash floor breaks.</div>
+      </article>
+
+      <article class="utility-card">
+        <div>
+          <div class="icon">📦</div>
+          <h3>Spot inventory pressure</h3>
+          <p>Warn when restocking too late risks stockouts or restocking too early traps too much working capital in inventory.</p>
+        </div>
+        <div class="operator-move">Operator move: reorder without starving the bank account.</div>
+      </article>
+
+      <article class="utility-card">
+        <div>
+          <div class="icon">📣</div>
+          <h3>Model ad spend decisions</h3>
+          <p>Stress-test how aggressive paid media affects cash balance, margin, payback period, and required buffer.</p>
+        </div>
+        <div class="operator-move">Operator move: scale ads without lighting cash on fire.</div>
+      </article>
+
+      <article class="utility-card">
+        <div>
+          <div class="icon">💸</div>
+          <h3>Flag funding triggers</h3>
+          <p>Identify working capital gaps early without turning the experience into a pushy loan pitch.</p>
+        </div>
+        <div class="operator-move">Operator move: prepare capital before panic pricing.</div>
+      </article>
+
+      <article class="utility-card">
+        <div>
+          <div class="icon">🛠️</div>
+          <h3>Generate action plan</h3>
+          <p>Get a practical next-step plan for cutting costs, delaying purchases, adjusting ads, restocking, or protecting cash buffer.</p>
+        </div>
+        <div class="operator-move">Operator move: stop admiring the problem.</div>
+      </article>
+
+      <article class="utility-card">
+        <div>
+          <div class="icon">📝</div>
+          <h3>Prepare funding memo</h3>
+          <p>Summarize the cash gap, timing issue, and likely use of funds so owners, advisors, or funding partners can understand the situation fast.</p>
+        </div>
+        <div class="operator-move">Operator move: explain the gap like a pro.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section dark-section" aria-labelledby="workflow-title">
+    <div class="section-head center">
+      <span class="eyebrow dark">⚙️ How it works</span>
+      <h2 id="workflow-title">Five steps from “where did the money go?” to “here’s the move.”</h2>
+      <p>
+        Start with rough numbers, improve the forecast with files, then use the output to make better operating decisions before the cash crunch gets teeth.
+      </p>
+    </div>
+
+    <div class="workflow">
+      <article class="step">
+        <div class="step-number">1</div>
+        <h3>Intake</h3>
+        <p>Enter cash, revenue, margin, ads, inventory plans, debt payments, payout timing, and desired buffer.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">2</div>
+        <h3>Upload</h3>
+        <p>Add Shopify, Amazon, TikTok, Etsy, Stripe, PayPal, P&amp;L, bank, ad, or inventory files when available.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">3</div>
+        <h3>Forecast</h3>
+        <p>Generate conservative, base, and optimistic 90-day scenarios with cash low points and pressure alerts.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">4</div>
+        <h3>Decide</h3>
+        <p>Compare options: cut spend, delay purchases, restock sooner, preserve cash, or prepare capital.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">5</div>
+        <h3>Act</h3>
+        <p>Use the action plan, planner, prompts, and memo to make the next move without guessing in the fog.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="embed" aria-labelledby="embed-title">
+    <div class="embed-layout">
+      <div class="embed-copy">
+        <span class="eyebrow">🧩 Website embed</span>
+        <h2 id="embed-title">Embed the forecast intake anywhere sellers already are.</h2>
+        <p>
+          Drop the lightweight cash-flow intake into a Wix page, WordPress post, Webflow landing page, partner portal, Notion-style hub, or ecommerce funding page. Instead of telling sellers the tool exists, let them start diagnosing cash pressure directly on the page.
+        </p>
+
+        <div class="use-list" aria-label="Embed use cases">
+          <span>Partner landing pages for ecommerce funding campaigns</span>
+          <span>Shopify seller resource hubs and blog posts</span>
+          <span>Agency lead magnets and intake pages</span>
+          <span>Wix, Webflow, WordPress, and Notion-style embeds</span>
+        </div>
+
+        <div class="cta">
+          <a class="button primary" href="embed.html">Open Full Embed</a>
+          <a class="button" href="marketing/">View Marketing Kit</a>
+        </div>
+      </div>
+
+      <div class="embed-device" aria-label="Embedded tool preview">
+        <div class="browser-bar">
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-url">ecommerce-cash-flow.vercel.app/embed.html</span>
+        </div>
+        <div class="iframe-wrap">
+          <iframe src="embed.html" title="Ecommerce Cash Flow Forecaster embedded intake preview" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section" aria-labelledby="resources-title">
+    <div class="section-head">
+      <span class="eyebrow dark">📚 Resource hub</span>
+      <h2 id="resources-title">The full operating kit is connected.</h2>
+      <p>
+        Use the planner, prompt library, docs, marketing assets, and release package as the working system behind the GPT.
+      </p>
+    </div>
+
+    <div class="resource-grid">
+      <a class="resource-card" href="spreadsheet/">
+        <div>
+          <div class="resource-icon">📊</div>
+          <h3>90-Day Planner</h3>
+          <p>Spreadsheet structure, formulas, warnings, sample data, and build notes.</p>
+        </div>
+        <strong>Open Planner →</strong>
+      </a>
+
+      <a class="resource-card" href="prompts/">
+        <div>
+          <div class="resource-icon">🧠</div>
+          <h3>Prompt Library</h3>
+          <p>Reusable prompts for weekly analysis, scenarios, memo generation, and forecast updates.</p>
+        </div>
+        <strong>Open Prompts →</strong>
+      </a>
+
+      <a class="resource-card" href="knowledge/">
+        <div>
+          <div class="resource-icon">📘</div>
+          <h3>Docs / Knowledge Base</h3>
+          <p>Core CustomGPT knowledge files and operating context for the forecasting assistant.</p>
+        </div>
+        <strong>Open Docs →</strong>
+      </a>
+
+      <a class="resource-card" href="marketing/">
+        <div>
+          <div class="resource-icon">📣</div>
+          <h3>Marketing Kit</h3>
+          <p>Lead magnet positioning, landing page copy, email copy, and video content ideas.</p>
+        </div>
+        <strong>Open Kit →</strong>
+      </a>
+
+      <a class="resource-card" href="releases/v1.0/">
+        <div>
+          <div class="resource-icon">🚀</div>
+          <h3>Release v1.0</h3>
+          <p>Release manifest, upload checklist, and approved build package notes.</p>
+        </div>
+        <strong>Open Release →</strong>
+      </a>
+    </div>
+  </section>
+
+  <section class="section dark-section final-cta" id="get-started" aria-labelledby="get-started-title">
+    <div>
+      <span class="eyebrow dark">🚨 Stop guessing</span>
+      <h2 id="get-started-title">Don’t wait until payroll, inventory, and ad spend start fighting in the parking lot.</h2>
+      <p>
+        Use the 90-day forecast workflow to find the cash gap, understand what caused it, and decide the next operator move before the emergency pricing goblin shows up.
+      </p>
+
+      <div class="cta">
+        <a class="button gold" href="spreadsheet/">Start Forecast</a>
+        <a class="button ghost-dark" href="spreadsheet/">Download Planner</a>
+        <a class="button ghost-dark" href="knowledge/">View Docs</a>
+      </div>
+    </div>
+
+    <aside class="cta-panel" aria-label="Forecast readiness checklist">
+      <h3>Bring the messy numbers. The tool can work with that.</h3>
+      <ul>
+        <li>Current cash balance and desired cash buffer</li>
+        <li>Weekly sales, gross margin, refunds, and shipping costs</li>
+        <li>Ad spend, inventory reorders, debt payments, and payout timing</li>
+        <li>Optional uploaded reports from stores, banks, processors, and ad platforms</li>
+      </ul>
+    </aside>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>
+      Forecasts are estimates based on uploaded data and user assumptions. This tool is for planning support only and does not provide legal, tax, accounting, lending, investment, or financial advice. Funding availability, terms, and outcomes depend on third-party review and the specific business profile.
+    </p>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="spreadsheet/">90-Day Planner</a>
+      <a href="prompts/">Prompt Library</a>
+      <a href="knowledge/">Knowledge Base</a>
+      <a href="marketing/">Marketing Assets</a>
+      <a href="releases/v1.0/">Release v1.0</a>
+      <a href="embed.html">Embed Version</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>
