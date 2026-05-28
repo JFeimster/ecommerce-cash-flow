@@ -5,33 +5,34 @@ const FORM_CONFIGS = {
     baseUrl: "https://tally.so/r/dWvEqN",
     displayText: "Prefill My Funding Application",
     fields: {
-      requestedFundingAmount: "funding_amount",
-      businessName: "business_name",
-      businessUrl: "business_url",
-      timeInBusiness: "time_in_business",
-      averageMonthlyRevenue: "average_monthly_revenue",
-      bankAccountNameType: "bank_account_name_type",
-      firstName: "first_name",
-      lastName: "last_name",
-      email: "email",
-      phone: "phone",
+      // Visible Tally fields — UUIDs required for URL prefilling
+      requestedFundingAmount: "3d553258-4fca-4765-a8eb-455876f75e70",
+      businessName: "610cfff5-b10b-45f3-be29-f0282884c413",
+      businessUrl: "d0d62bdc-adb3-481b-8442-933d9d64ab73",
+      timeInBusiness: "d18043fe-954e-4832-8c24-9997ecf36951",
+      averageMonthlyRevenue: "487c4ab5-791a-41f9-9fc6-8239d24f1375",
+      bankAccountNameType: "5962281e-f520-4374-86f2-6a8c22384319",
+      firstName: "333605ed-6542-4ae1-96db-bfe95d38888e",
+      lastName: "9ef8671c-d154-44b3-85c3-c2797adef725",
+      email: "9a7a2801-f406-4343-a310-ab27ed1fa63b",
+      phone: "c8773a2e-c921-4992-9e82-e01dbb769e36",
 
-      // Hidden GPT / forecast / attribution fields
-      riskLevel: "risk_level",
-      estimatedFundingGap: "estimated_funding_gap",
-      currentCashBalance: "current_cash_balance",
-      projectedCashLowPoint: "projected_cash_low_point",
-      projectedCashLowPointWeek: "projected_cash_low_point_week",
-      suggestedWorkingCapitalRangeLow: "suggested_working_capital_range_low",
-      suggestedWorkingCapitalRangeHigh: "suggested_working_capital_range_high",
-      recommendedNextStep: "recommended_next_step",
-      source: "source",
-      referralPartner: "referral_partner",
-      sessionId: "session_id",
-      utmSource: "utm_source",
-      utmMedium: "utm_medium",
-      utmCampaign: "utm_campaign",
-      utmContent: "utm_content"
+      // Hidden GPT / forecast / attribution fields — UUIDs required
+      riskLevel: "41865042-0b1f-4bb7-8745-9970e9aba0e0",
+      estimatedFundingGap: "2ab242e3-4cd1-48e9-980a-c76c0e232f98",
+      currentCashBalance: "1d7c96dd-75ea-4c2b-bf32-97599fd176c5",
+      projectedCashLowPoint: "7f2cbdf7-73e1-4ce1-9fd0-bb57b40ac4d2",
+      projectedCashLowPointWeek: "7e9ce093-0e98-4d28-8d9d-7aa27775ff65",
+      suggestedWorkingCapitalRangeLow: "a87f0380-2cde-4281-b2fd-9789ce84528e",
+      suggestedWorkingCapitalRangeHigh: "210464db-7a48-471c-ac77-1f976b85397a",
+      recommendedNextStep: "d2bb41e6-cee9-4f92-bb74-2ba282e6de38",
+      source: "bf2beb53-a8dc-415b-90aa-c5b2e36c7149",
+      referralPartner: "7dd85257-05ae-4e7b-b1c8-80806cba94bc",
+      sessionId: "51076086-b33b-4521-9e19-5cbe014f3049",
+      utmSource: "f32f3fad-05fe-42c4-b1c5-7f9b50ef21b2",
+      utmMedium: "b4af53b1-2c2f-41a3-8544-b1e825990e7d",
+      utmCampaign: "cf7a6afa-b91e-4ab7-bf3d-3cdaae570db3",
+      utmContent: "0d0bc9a0-d35f-4d0d-9d23-c462f0ce9873"
     }
   },
 
@@ -41,28 +42,28 @@ const FORM_CONFIGS = {
   //   baseUrl: "https://tally.so/r/YOUR_FORM_ID",
   //   displayText: "Prefill My Cash Flow Review",
   //   fields: {
-  //     businessName: "business_name",
-  //     businessUrl: "business_url",
-  //     timeInBusiness: "time_in_business",
-  //     averageMonthlyRevenue: "average_monthly_revenue",
-  //     bankAccountNameType: "bank_account_name_type",
-  //     firstName: "first_name",
-  //     lastName: "last_name",
-  //     email: "email",
-  //     phone: "phone",
-  //     riskLevel: "risk_level",
-  //     estimatedFundingGap: "estimated_funding_gap",
-  //     currentCashBalance: "current_cash_balance",
-  //     projectedCashLowPoint: "projected_cash_low_point",
-  //     projectedCashLowPointWeek: "projected_cash_low_point_week",
-  //     recommendedNextStep: "recommended_next_step",
-  //     source: "source",
-  //     referralPartner: "referral_partner",
-  //     sessionId: "session_id",
-  //     utmSource: "utm_source",
-  //     utmMedium: "utm_medium",
-  //     utmCampaign: "utm_campaign",
-  //     utmContent: "utm_content"
+  //     businessName: "FIELD_UUID_HERE",
+  //     businessUrl: "FIELD_UUID_HERE",
+  //     timeInBusiness: "FIELD_UUID_HERE",
+  //     averageMonthlyRevenue: "FIELD_UUID_HERE",
+  //     bankAccountNameType: "FIELD_UUID_HERE",
+  //     firstName: "FIELD_UUID_HERE",
+  //     lastName: "FIELD_UUID_HERE",
+  //     email: "FIELD_UUID_HERE",
+  //     phone: "FIELD_UUID_HERE",
+  //     riskLevel: "FIELD_UUID_HERE",
+  //     estimatedFundingGap: "FIELD_UUID_HERE",
+  //     currentCashBalance: "FIELD_UUID_HERE",
+  //     projectedCashLowPoint: "FIELD_UUID_HERE",
+  //     projectedCashLowPointWeek: "FIELD_UUID_HERE",
+  //     recommendedNextStep: "FIELD_UUID_HERE",
+  //     source: "FIELD_UUID_HERE",
+  //     referralPartner: "FIELD_UUID_HERE",
+  //     sessionId: "FIELD_UUID_HERE",
+  //     utmSource: "FIELD_UUID_HERE",
+  //     utmMedium: "FIELD_UUID_HERE",
+  //     utmCampaign: "FIELD_UUID_HERE",
+  //     utmContent: "FIELD_UUID_HERE"
   //   }
   // }
 };
@@ -77,9 +78,9 @@ function isPresent(value) {
   return value !== undefined && value !== null && String(value).trim() !== "";
 }
 
-function appendIfPresent(params, tallyFieldName, value) {
-  if (isPresent(tallyFieldName) && isPresent(value)) {
-    params.set(tallyFieldName, String(value));
+function appendIfPresent(params, tallyFieldId, value) {
+  if (isPresent(tallyFieldId) && isPresent(value)) {
+    params.set(tallyFieldId, String(value));
   }
 }
 
