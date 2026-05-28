@@ -1,183 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prompt Library | Ecommerce Cash Flow</title>
-  <meta name="description" content="Reusable prompts for weekly cash flow analysis, scenario planning, and funding memo generation.">
-  <style>
-    :root {
-      --bg: #0f1115;
-      --panel: #171b22;
-      --panel-2: #1f2530;
-      --text: #f4f7fb;
-      --muted: #aab4c3;
-      --accent: #f5b84b;
-      --line: rgba(255,255,255,.12);
-      --good: #62d394;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, rgba(245,184,75,.18), transparent 34rem), var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    main {
-      width: min(1080px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .78rem;
-      font-weight: 800;
-    }
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 4.5rem);
-      line-height: 1;
-      margin: .45rem 0 1rem;
-      max-width: 900px;
-    }
-    .lede {
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      max-width: 780px;
-    }
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 28px 0 36px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #111;
-      text-decoration: none;
-      font-weight: 800;
-    }
-    .button.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-    section {
-      margin-top: 34px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    }
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.35rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .card {
-      display: block;
-      padding: 18px;
-      border-radius: 18px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      color: var(--text);
-      text-decoration: none;
-      min-height: 130px;
-    }
-    .card:hover {
-      border-color: rgba(245,184,75,.7);
-      background: var(--panel-2);
-    }
-    .file-name {
-      display: block;
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 8px;
-      word-break: break-word;
-    }
-    .file-desc {
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    ul {
-      margin: 0;
-      padding-left: 1.15rem;
-      color: var(--muted);
-    }
-    li + li { margin-top: 8px; }
-    .note {
-      color: var(--muted);
-      border-left: 4px solid var(--accent);
-      padding-left: 14px;
-    }
-    footer {
-      margin-top: 38px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    code {
-      color: var(--good);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Library | Ecommerce Cash Flow Forecaster</title>
+<meta name="description" content="A tactical prompt library for ecommerce sellers using the 90-Day Ecommerce Cash Flow Planner to run weekly reviews, scenario plans, funding memos, and cash-risk action plans.">
+<style>
+:root{--bg:#070d18;--bg2:#0f172a;--paper:#fffaf0;--card:#101a2c;--card2:#151f33;--ink:#f8fafc;--muted:#a8b4c7;--line:rgba(255,255,255,.13);--line2:rgba(15,23,42,.12);--gold:#f5c451;--amber:#f59e0b;--blue:#38bdf8;--green:#34d399;--red:#fb7185;--cream:#fff7e5;--dark:#0b1220;--shadow:0 28px 80px rgba(0,0,0,.34);--radius:28px;--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top left,rgba(56,189,248,.20),transparent 30%),radial-gradient(circle at top right,rgba(245,196,81,.18),transparent 26%),linear-gradient(180deg,#070d18 0%,#0f172a 48%,#fff7e5 48%,#fffaf0 100%);color:var(--ink);line-height:1.55}a{color:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(7,13,24,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{max-width:var(--max);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:950;letter-spacing:-.04em}.logo{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#0f766e,#f5c451);color:#fff;box-shadow:0 18px 40px rgba(56,189,248,.22)}.links,.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.links a{color:#cbd5e1;text-decoration:none;font-size:14px;font-weight:850;padding:8px 9px;border-radius:999px}.links a:hover,.links a.active{background:rgba(255,255,255,.09);color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-weight:950;box-shadow:0 14px 34px rgba(0,0,0,.18);transition:.18s ease}.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.28)}.btn.gold{background:linear-gradient(135deg,#fde68a,#f5c451,#d6a84f);color:#111827;border-color:rgba(245,196,81,.6)}.btn.dark{background:#0f172a;color:#fff}.shell{max-width:var(--max);margin:0 auto;padding:58px 20px 72px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;min-height:620px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(56,189,248,.25);background:rgba(56,189,248,.1);color:#bae6fd;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:950}.hero h1{font-size:clamp(46px,7.6vw,84px);line-height:.9;letter-spacing:-.075em;margin:18px 0}.hero h1 span{color:var(--gold)}.lead{font-size:clamp(18px,2vw,22px);color:#cbd5e1;max-width:760px;margin:0}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:24px}.dash-head{display:flex;justify-content:space-between;gap:16px;margin-bottom:18px}.dash-head h2{margin:4px 0 0;font-size:26px;letter-spacing:-.045em}.status{border-radius:999px;padding:7px 10px;background:rgba(52,211,153,.13);color:#bbf7d0;font-size:12px;font-weight:950;border:1px solid rgba(52,211,153,.25);height:max-content}.lane-grid{display:grid;grid-template-columns:1fr;gap:12px}.lane{padding:18px;border:1px solid var(--line);border-radius:22px;background:rgba(15,23,42,.72)}.lane strong{display:block;font-size:20px;letter-spacing:-.035em}.lane p{margin:6px 0 0;color:#cbd5e1}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.metric{border:1px solid var(--line);border-radius:18px;padding:14px;background:rgba(255,255,255,.06)}.metric b{display:block;font-size:24px;color:#fff}.metric span{font-size:12px;color:#a8b4c7;font-weight:850;text-transform:uppercase;letter-spacing:.07em}.section{margin-top:86px}.light{color:#111827;background:#fffaf0;border:1px solid var(--line2);box-shadow:0 22px 60px rgba(15,23,42,.09);border-radius:34px;padding:38px}.dark{background:linear-gradient(135deg,#08111f,#0f172a 58%,#111827);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:34px;padding:38px}.section-head{max-width:820px;margin-bottom:26px}.center{text-align:center;margin-left:auto;margin-right:auto}.section-head h2{font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-.065em;margin:12px 0}.section-head p{color:inherit;opacity:.75;font-size:18px;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid.four{grid-template-columns:repeat(4,1fr)}.card{border:1px solid var(--line2);background:#fffdf8;border-radius:24px;padding:22px;min-height:210px;box-shadow:0 14px 34px rgba(15,23,42,.06);transition:.18s ease}.card:hover{transform:translateY(-4px);box-shadow:0 22px 52px rgba(15,23,42,.12)}.dark .card{background:rgba(255,255,255,.065);border-color:var(--line);box-shadow:none;color:#fff}.icon{font-size:30px;margin-bottom:14px}.card h3{font-size:22px;line-height:1.05;letter-spacing:-.04em;margin:0 0 9px}.card p{margin:0;color:#526173}.dark .card p{color:#cbd5e1}.tag{display:inline-flex;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:950;background:#e0f2fe;color:#075985;margin-top:16px}.dark .tag{background:rgba(245,196,81,.14);color:#fde68a;border:1px solid rgba(245,196,81,.25)}.prompt-preview{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.copybox{background:#07111f;color:#dbeafe;border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:18px;overflow:hidden}.copybox h3{margin:0 0 10px;color:#fff}.copybox pre{margin:0;white-space:pre-wrap;font-size:13px;line-height:1.5;color:#cbd5e1}.scenario-table{overflow:auto;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.06);margin-top:22px}.scenario-table table{width:100%;border-collapse:collapse;min-width:760px}.scenario-table th,.scenario-table td{padding:14px;border-bottom:1px solid var(--line);text-align:left}.scenario-table th{color:#fde68a;font-size:13px;text-transform:uppercase;letter-spacing:.07em}.scenario-table td{color:#e2e8f0}.chooser{display:grid;gap:10px}.choice{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:center;padding:16px;border-radius:20px;background:#fffdf8;border:1px solid var(--line2)}.choice b{font-size:18px}.choice span{color:#526173}.disclaimer-box{margin-top:22px;padding:20px;border-radius:22px;background:rgba(251,113,133,.12);border:1px solid rgba(251,113,133,.25);color:#fecdd3;font-weight:850}.final{display:grid;grid-template-columns:1fr .9fr;gap:22px;align-items:center}.footer{max-width:var(--max);margin:0 auto;padding:0 20px 42px;color:#64748b}.footer-inner{border-top:1px solid rgba(15,23,42,.12);padding-top:24px;display:grid;grid-template-columns:1fr auto;gap:20px}.footer p{margin:0;max-width:760px}.footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.footer-links a{color:#475569;font-weight:850;text-decoration:none}.footer-links a:hover{text-decoration:underline;text-underline-offset:4px}@media(max-width:1040px){.nav{align-items:flex-start;flex-direction:column}.hero,.final,.prompt-preview{grid-template-columns:1fr}.grid,.grid.four{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.shell{padding:38px 16px 58px}.links,.actions,.btn{width:100%}.btn{justify-content:center}.hero{min-height:auto}.grid,.grid.four,.metric-row{grid-template-columns:1fr}.light,.dark{padding:26px 18px;border-radius:28px}.choice{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}.footer-links{justify-content:flex-start}}
+</style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Ecommerce Cash Flow Forecaster GPT</p>
-    <h1>Prompt Library</h1>
-    <p class="lede">Reusable prompts for weekly cash flow analysis, scenario planning, and funding memo generation.</p>
-
-    <div class="actions">
-      <a class="button" href="README.md">Open README</a>
-      <a class="button secondary" href="../index.html">Project Home</a>
+<header class="topbar">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="../"><span class="logo">CF</span><span>Ecommerce Cash Flow</span></a>
+    <div class="links">
+      <a href="../">Home</a><a href="../spreadsheet/">Planner</a><a class="active" href="../prompts/">Prompts</a><a href="../knowledge/">Docs</a><a href="../marketing/">Marketing Kit</a><a href="../releases/v1.0/">Release</a>
     </div>
-
-    <section>
-      <h2>Purpose</h2>
-      <p class="note">This folder gives users and the GPT repeatable prompt workflows for turning spreadsheet data into useful decisions.</p>
-    </section>
-
-    <section>
-      <h2>Files</h2>
-      <div class="grid">
-        <a class="card" href="weekly-analysis-prompts.md">
-          <span class="file-name">weekly-analysis-prompts.md</span>
-          <span class="file-desc">Prompts for weekly cash reviews, risk dashboards, ad spend checks, inventory pressure, and cash preservation.</span>
-        </a>
-        <a class="card" href="scenario-planning-prompts.md">
-          <span class="file-name">scenario-planning-prompts.md</span>
-          <span class="file-desc">Prompts for Conservative/Base/Optimistic scenarios and stress tests.</span>
-        </a>
-        <a class="card" href="funding-memo-prompts.md">
-          <span class="file-name">funding-memo-prompts.md</span>
-          <span class="file-desc">Prompts for funding memos, working capital summaries, readiness checklists, and advisor briefs.</span>
-        </a>
+    <div class="actions"><a class="btn" href="../embed.html">Embed Tool</a><a class="btn gold" href="../spreadsheet/">Use Planner</a></div>
+  </nav>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">🧠 Prompt Library</span>
+      <h1>Stop asking ChatGPT cute questions. <span>Make it find the cash leak.</span></h1>
+      <p class="lead">This prompt library turns the 90-Day Ecommerce Cash Flow Planner into weekly reviews, scenario plans, funding memos, cash-risk dashboards, inventory checks, ad-spend reviews, and action plans sellers can actually use.</p>
+      <div class="cta"><a class="btn gold" href="#weekly">Start Weekly Review</a><a class="btn" href="#scenarios">Run Scenario Plan</a><a class="btn" href="#funding">Build Funding Memo</a></div>
+    </div>
+    <aside class="panel" aria-label="Prompt workflow dashboard">
+      <div class="dash-head"><div><span class="eyebrow">Workflow dashboard</span><h2>Pick the mission. Run the prompt. Make the move.</h2></div><span class="status">Operator-ready</span></div>
+      <div class="lane-grid">
+        <div class="lane"><strong>Weekly Analysis</strong><p>Review cash risk, lowest cash week, inventory pressure, ad spend, debt-service strain, margin leaks, and next actions.</p></div>
+        <div class="lane"><strong>Scenario Planning</strong><p>Stress-test Conservative, Base, and Optimistic cases before inventory, ads, hiring, debt, or funding decisions.</p></div>
+        <div class="lane"><strong>Funding Memo</strong><p>Convert forecast outputs into clear working-capital summaries, readiness checklists, advisor briefs, and broker intake notes.</p></div>
       </div>
-    </section>
+      <div class="metric-row"><div class="metric"><span>Prompt lanes</span><b>3</b></div><div class="metric"><span>Core prompts</span><b>43</b></div><div class="metric"><span>Best use</span><b>Weekly</b></div></div>
+    </aside>
+  </section>
 
-    <section>
-      <h2>Recommended Usage</h2>
-      <ul>
-        <li>Use these prompts inside the GPT, spreadsheet instructions, or marketing follow-up.</li>
-<li>Keep prompt files separate from core knowledge files so the GPT brain stays clean.</li>
-<li>Upload to CustomGPT knowledge only if you want the GPT to expose prompt libraries to users.</li>
-      </ul>
-    </section>
+  <section class="section light" id="weekly">
+    <div class="section-head center"><span class="eyebrow">📅 Weekly Analysis</span><h2>Run the cash-flow review before the bank account starts speaking in threats.</h2><p>Use these prompts after updating the planner. They diagnose the week, find the cash low point, and turn spreadsheet noise into operator moves.</p></div>
+    <div class="grid">
+      <article class="card"><div class="icon">🧾</div><h3>Weekly Cash Flow Review</h3><p>Get risk level, lowest projected cash week, drivers of pressure, funding gap, and top five actions.</p><span class="tag">Best weekly starter</span></article>
+      <article class="card"><div class="icon">🚦</div><h3>Cash Risk Dashboard</h3><p>Score cash, inventory, ads, debt, margin, funding readiness, and data quality as Low to Critical.</p><span class="tag">Risk scorecard</span></article>
+      <article class="card"><div class="icon">📉</div><h3>Lowest Cash Week Diagnosis</h3><p>Find the week cash gets lowest, why it happens, and what can be controlled in the next seven days.</p><span class="tag">Find the danger week</span></article>
+      <article class="card"><div class="icon">📦</div><h3>Inventory Pressure Review</h3><p>Check stockout risk, overstock risk, planned restocks, purchase timing, and cash-buffer impact.</p><span class="tag">Restock decisions</span></article>
+      <article class="card"><div class="icon">📣</div><h3>Ad Spend Review</h3><p>Review planned spend against cash, margin, inventory, payout timing, and gross profit instead of worshiping ROAS.</p><span class="tag">Scale safely</span></article>
+      <article class="card"><div class="icon">🧨</div><h3>Cash Flow Truth Teller</h3><p>Force the uncomfortable answer: what number worries you most, what assumption is dangerous, and what should wait.</p><span class="tag">No fluff mode</span></article>
+    </div>
+    <div class="prompt-preview">
+      <div class="copybox"><h3>Weekly Cash Flow Review</h3><pre><code>Act as my ecommerce cash flow operator.
+Review the spreadsheet data I paste below from my 90-day cash flow planner.
+Identify cash risk level, lowest projected cash week, cash low point, drivers of pressure, funding gap, and the top 5 actions I should take this week.
+Be direct, practical, and plainspoken. If data is missing, label it clearly.</code></pre></div>
+      <div class="copybox"><h3>Before I Spend More Money</h3><pre><code>Before I spend more money on inventory, ads, software, contractors, or debt payments, review my forecast.
+Tell me whether this spend is safe, what it does to ending cash, whether it drops cash below my buffer, whether it creates a funding gap, and what I should cut, delay, split, or negotiate first.</code></pre></div>
+    </div>
+  </section>
 
-    <footer>
-      <p><strong>Upload rule:</strong> GitHub is the canonical source. Google Drive is the working/editing layer. CustomGPT receives approved release files only.</p>
-    </footer>
-  </main>
+  <section class="section dark" id="scenarios">
+    <div class="section-head"><span class="eyebrow">🧪 Scenario Planning</span><h2>Stress-test decisions before they become expensive confidence.</h2><p>Use Conservative, Base, and Optimistic cases to test inventory orders, ad spend changes, payout delays, margin compression, revenue drops, and debt stacking.</p></div>
+    <div class="grid four">
+      <article class="card"><div class="icon">🛡️</div><h3>Conservative Case</h3><p>Lower revenue, delayed payouts, higher costs, more refunds, weaker ads, and no magical rescue money.</p></article>
+      <article class="card"><div class="icon">⚖️</div><h3>Base Case</h3><p>The most reasonable current forecast using normal payout timing, known expenses, and expected inventory commitments.</p></article>
+      <article class="card"><div class="icon">🚀</div><h3>Optimistic Case</h3><p>Upside only when supported by evidence. Hope is not a forecast; it is a beverage choice.</p></article>
+      <article class="card"><div class="icon">🚪</div><h3>Decision Gate</h3><p>Compare yes, wait, reduce by half, revenue down 20%, and payout delayed one week before the next big move.</p></article>
+    </div>
+    <div class="scenario-table" aria-label="Scenario comparison table mockup">
+      <table><thead><tr><th>Scenario</th><th>Ending Cash</th><th>Lowest Cash Point</th><th>Funding Gap</th><th>Risk Level</th><th>Use For Decisions?</th></tr></thead><tbody><tr><td>Conservative</td><td>$9,800</td><td>$3,500</td><td>$6,500</td><td>High</td><td>Yes when data is messy</td></tr><tr><td>Base</td><td>$22,400</td><td>$12,200</td><td>$0</td><td>Medium</td><td>Yes when data is decent</td></tr><tr><td>Optimistic</td><td>$38,700</td><td>$19,100</td><td>$0</td><td>Low</td><td>Reference only unless proven</td></tr></tbody></table>
+    </div>
+  </section>
+
+  <section class="section light" id="funding">
+    <div class="section-head"><span class="eyebrow">💸 Funding Memo Prompts</span><h2>Make the seller look prepared, not desperate.</h2><p>These prompts turn the forecast into credible funding memos, working-capital summaries, broker intake notes, advisor briefs, and risk disclosures without implying approval or guarantees.</p></div>
+    <div class="grid">
+      <article class="card"><div class="icon">📄</div><h3>Forecast-to-Funding Memo</h3><p>Business overview, current cash, cash low point, safe buffer, gap, use of funds, existing obligations, risks, and documents.</p></article>
+      <article class="card"><div class="icon">📦</div><h3>Inventory Financing Memo</h3><p>Explain purchase amount, supplier timing, lead time, stockout risk, cash after purchase, and repayment pressure.</p></article>
+      <article class="card"><div class="icon">⏳</div><h3>Payout Delay Memo</h3><p>Show which platforms create timing gaps between sales made, cash received, and expenses due.</p></article>
+      <article class="card"><div class="icon">✅</div><h3>Funding Readiness Checklist</h3><p>Score current cash, revenue trend, payout timing, margins, inventory plan, debt payments, reports, and forecast summary.</p></article>
+      <article class="card"><div class="icon">🧮</div><h3>Working Capital Range</h3><p>Calculate gap before cushion, suggested cushion, low/high planning range, and data that could change the range.</p></article>
+      <article class="card"><div class="icon">🧑‍💼</div><h3>Advisor Brief</h3><p>Package the forecast for an accountant, bookkeeper, broker, or advisor with clear questions and next steps.</p></article>
+    </div>
+    <div class="disclaimer-box">This is a forecast-based planning summary. It is not a loan approval, qualification decision, eligibility determination, funding guarantee, or legal, tax, accounting, lending, investment, or financial advice.</div>
+  </section>
+
+  <section class="section light" id="chooser">
+    <div class="section-head"><span class="eyebrow">🧭 Prompt chooser</span><h2>Which prompt should you use?</h2><p>Pick the situation. Run the correct prompt. Avoid the classic founder move of using a hammer on a spreadsheet fire.</p></div>
+    <div class="chooser">
+      <div class="choice"><b>Cash feels tight</b><span>Use Weekly Cash Flow Review + Cash Risk Dashboard.</span></div>
+      <div class="choice"><b>Need to decide on inventory</b><span>Use Inventory Pressure Review + Inventory Scenario Test.</span></div>
+      <div class="choice"><b>Want to scale ads</b><span>Use Ad Spend Review + Ad Spend Scenario Test.</span></div>
+      <div class="choice"><b>Considering funding</b><span>Use Funding Gap Diagnosis + Funding Memo From Forecast.</span></div>
+      <div class="choice"><b>Data is messy</b><span>Use Data Quality Review before making any major decision.</span></div>
+      <div class="choice"><b>Need advisor or broker summary</b><span>Use Advisor Brief, Broker Intake Summary, or One-Page Working Capital Summary.</span></div>
+    </div>
+  </section>
+
+  <section class="section dark final">
+    <div><span class="eyebrow">Next move</span><h2>Prompts are the ignition. The planner is the engine.</h2><p>Update the spreadsheet, paste the right outputs into the GPT, then use the prompt library to force a decision-grade review.</p></div>
+    <div class="cta"><a class="btn gold" href="../spreadsheet/">Open Planner</a><a class="btn" href="../knowledge/">View Docs</a><a class="btn" href="../marketing/">Marketing Kit</a></div>
+  </section>
+</main>
+<footer class="footer"><div class="footer-inner"><p>These prompts support planning and decision-making. They do not create legal, tax, accounting, lending, investment, or financial advice. They also do not determine funding approval, qualification, eligibility, or guarantees.</p><nav class="footer-links" aria-label="Footer navigation"><a href="../">Home</a><a href="../spreadsheet/">90-Day Planner</a><a href="../prompts/">Prompt Library</a><a href="../knowledge/">Knowledge Base</a><a href="../marketing/">Marketing Assets</a><a href="../releases/v1.0/">Release v1.0</a><a href="../embed.html">Embed Version</a></nav></div></footer>
 </body>
 </html>
