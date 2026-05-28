@@ -1,187 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spreadsheet Documentation | Ecommerce Cash Flow</title>
-  <meta name="description" content="Build specs, formulas, conditional formatting rules, and sample data for the 90-Day Ecommerce Cash Flow Planner.">
-  <style>
-    :root {
-      --bg: #0f1115;
-      --panel: #171b22;
-      --panel-2: #1f2530;
-      --text: #f4f7fb;
-      --muted: #aab4c3;
-      --accent: #f5b84b;
-      --line: rgba(255,255,255,.12);
-      --good: #62d394;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, rgba(245,184,75,.18), transparent 34rem), var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-    }
-    main {
-      width: min(1080px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .78rem;
-      font-weight: 800;
-    }
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 4.5rem);
-      line-height: 1;
-      margin: .45rem 0 1rem;
-      max-width: 900px;
-    }
-    .lede {
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      max-width: 780px;
-    }
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 28px 0 36px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #111;
-      text-decoration: none;
-      font-weight: 800;
-    }
-    .button.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-    section {
-      margin-top: 34px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    }
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.35rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .card {
-      display: block;
-      padding: 18px;
-      border-radius: 18px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      color: var(--text);
-      text-decoration: none;
-      min-height: 130px;
-    }
-    .card:hover {
-      border-color: rgba(245,184,75,.7);
-      background: var(--panel-2);
-    }
-    .file-name {
-      display: block;
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 8px;
-      word-break: break-word;
-    }
-    .file-desc {
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    ul {
-      margin: 0;
-      padding-left: 1.15rem;
-      color: var(--muted);
-    }
-    li + li { margin-top: 8px; }
-    .note {
-      color: var(--muted);
-      border-left: 4px solid var(--accent);
-      padding-left: 14px;
-    }
-    footer {
-      margin-top: 38px;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-    code {
-      color: var(--good);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>90-Day Ecommerce Cash Flow Planner | Spreadsheet System</title>
+<meta name="description" content="A high-utility spreadsheet landing page for the 90-Day Ecommerce Cash Flow Planner, including workbook tabs, formulas, warning logic, sample data, and weekly workflow.">
+<style>
+:root{--bg:#070d18;--bg2:#0f172a;--paper:#fffaf0;--ink:#f8fafc;--dark:#0b1220;--muted:#a8b4c7;--line:rgba(255,255,255,.13);--line2:rgba(15,23,42,.12);--gold:#f5c451;--blue:#38bdf8;--green:#34d399;--red:#fb7185;--orange:#fb923c;--yellow:#facc15;--shadow:0 28px 80px rgba(0,0,0,.32);--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;color:var(--ink);background:radial-gradient(circle at top left,rgba(56,189,248,.2),transparent 30%),radial-gradient(circle at top right,rgba(245,196,81,.18),transparent 28%),linear-gradient(180deg,#070d18 0,#0f172a 46%,#fff7e5 46%,#fffaf0 100%)}a{color:inherit}.topbar{position:sticky;top:0;z-index:20;background:rgba(7,13,24,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{max-width:var(--max);margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:950;letter-spacing:-.04em}.logo{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#2563eb,#0f766e,#f5c451);color:#fff}.links,.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.links a{color:#cbd5e1;text-decoration:none;font-size:14px;font-weight:850;padding:8px 9px;border-radius:999px}.links a:hover,.links a.active{background:rgba(255,255,255,.09);color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-weight:950;transition:.18s ease}.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.28)}.btn.gold{background:linear-gradient(135deg,#fde68a,#f5c451,#d6a84f);color:#111827;border-color:rgba(245,196,81,.55)}.btn.dark{background:#0f172a}.shell{max-width:var(--max);margin:auto;padding:58px 20px 72px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;min-height:620px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:#bae6fd;font-weight:950;font-size:13px}.hero h1{font-size:clamp(46px,7.3vw,84px);line-height:.9;letter-spacing:-.075em;margin:18px 0}.hero h1 span{color:var(--gold)}.lead{font-size:clamp(18px,2vw,22px);color:#cbd5e1;margin:0;max-width:760px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.panel{border:1px solid var(--line);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:24px}.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.kpi{border:1px solid var(--line);border-radius:20px;padding:16px;background:rgba(15,23,42,.7)}.kpi span{display:block;color:#a8b4c7;text-transform:uppercase;letter-spacing:.08em;font-size:11px;font-weight:950}.kpi b{display:block;font-size:28px;letter-spacing:-.05em;margin-top:4px}.alert{margin-top:16px;border:1px solid rgba(251,146,60,.28);background:rgba(251,146,60,.12);border-radius:22px;padding:16px;color:#fed7aa;font-weight:850}.section{margin-top:86px}.light{background:#fffaf0;color:#111827;border:1px solid var(--line2);border-radius:34px;padding:38px;box-shadow:0 22px 60px rgba(15,23,42,.09)}.dark{background:linear-gradient(135deg,#08111f,#0f172a 58%,#111827);border:1px solid var(--line);border-radius:34px;padding:38px;box-shadow:var(--shadow)}.section-head{max-width:840px;margin-bottom:28px}.center{text-align:center;margin-left:auto;margin-right:auto}.section-head h2{font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-.065em;margin:12px 0}.section-head p{margin:0;font-size:18px;opacity:.76}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid.five{grid-template-columns:repeat(5,1fr)}.card{border:1px solid var(--line2);background:#fffdf8;border-radius:24px;padding:22px;min-height:210px;box-shadow:0 14px 34px rgba(15,23,42,.06);transition:.18s ease}.card:hover{transform:translateY(-4px);box-shadow:0 22px 52px rgba(15,23,42,.12)}.dark .card{background:rgba(255,255,255,.065);border-color:var(--line);box-shadow:none;color:#fff}.icon{font-size:30px;margin-bottom:14px}.card h3{font-size:21px;line-height:1.05;letter-spacing:-.04em;margin:0 0 9px}.card p{margin:0;color:#526173}.dark .card p{color:#cbd5e1}.formula-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.formula{background:#07111f;color:#dbeafe;border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:18px}.formula b{display:block;color:#fff;margin-bottom:10px}.formula code{display:block;white-space:pre-wrap;color:#fde68a;font-size:14px;margin-bottom:10px}.formula p{margin:0;color:#cbd5e1}.warning-row{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.warning{border-radius:18px;padding:14px;text-align:center;font-weight:950;border:1px solid var(--line2)}.ok{background:#dcfce7;color:#166534}.watch{background:#fef9c3;color:#854d0e}.yellow{background:#fde68a;color:#78350f}.review{background:#fed7aa;color:#9a3412}.red{background:#fecaca;color:#991b1b}.critical{background:#7f1d1d;color:#fff}.missing{background:#e9d5ff;color:#581c87}.profile{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.profile-box{border:1px solid var(--line2);background:#fffdf8;border-radius:24px;padding:22px}.profile-box h3{margin-top:0;font-size:24px;letter-spacing:-.04em}.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{border-radius:999px;padding:8px 11px;background:#e0f2fe;color:#075985;font-weight:950}.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:step}.step{position:relative;border:1px solid var(--line);background:rgba(255,255,255,.065);border-radius:22px;padding:18px;min-height:150px}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg,#fde68a,#f5c451);color:#111827;font-weight:950;margin-bottom:16px}.final{display:grid;grid-template-columns:1fr .9fr;gap:22px;align-items:center}.footer{max-width:var(--max);margin:auto;padding:0 20px 42px;color:#64748b}.footer-inner{border-top:1px solid rgba(15,23,42,.12);padding-top:24px;display:grid;grid-template-columns:1fr auto;gap:20px}.footer p{margin:0;max-width:760px}.footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.footer-links a{color:#475569;font-weight:850;text-decoration:none}.footer-links a:hover{text-decoration:underline;text-underline-offset:4px}@media(max-width:1040px){.nav{align-items:flex-start;flex-direction:column}.hero,.profile,.final{grid-template-columns:1fr}.grid,.grid.five,.formula-grid{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(2,1fr)}.warning-row{grid-template-columns:repeat(3,1fr)}}@media(max-width:720px){.shell{padding:38px 16px 58px}.links,.actions,.btn{width:100%}.btn{justify-content:center}.hero{min-height:auto}.grid,.grid.five,.formula-grid,.workflow,.warning-row,.kpis{grid-template-columns:1fr}.light,.dark{padding:26px 18px;border-radius:28px}.footer-inner{grid-template-columns:1fr}.footer-links{justify-content:flex-start}}
+</style>
 </head>
 <body>
-  <main>
-    <p class="eyebrow">Ecommerce Cash Flow Forecaster GPT</p>
-    <h1>Spreadsheet Documentation</h1>
-    <p class="lede">Build specs, formulas, conditional formatting rules, and sample data for the 90-Day Ecommerce Cash Flow Planner.</p>
+<header class="topbar"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="../"><span class="logo">CF</span><span>Ecommerce Cash Flow</span></a><div class="links"><a href="../">Home</a><a class="active" href="../spreadsheet/">Planner</a><a href="../prompts/">Prompts</a><a href="../knowledge/">Docs</a><a href="../marketing/">Marketing Kit</a><a href="../releases/v1.0/">Release</a></div><div class="actions"><a class="btn" href="../embed.html">Embed Tool</a><a class="btn gold" href="../prompts/">Use Prompts</a></div></nav></header>
+<main class="shell">
+<section class="hero"><div><span class="eyebrow">📊 90-Day Planner</span><h1>The spreadsheet ecommerce sellers should update <span>before the bank account starts screaming.</span></h1><p class="lead">Forecast the next 13 weeks of revenue, expenses, inventory purchases, ad spend, debt payments, cash runway, trigger alerts, and working-capital gaps without needing a CFO robe or a monastery full of spreadsheet monks.</p><div class="cta"><a class="btn gold" href="#tabs">View Workbook Structure</a><a class="btn" href="#formulas">Review Formula Logic</a><a class="btn" href="../prompts/">Use Prompt Library</a></div></div><aside class="panel"><span class="eyebrow">Dashboard preview</span><div class="kpis"><div class="kpi"><span>Beginning Cash</span><b>$25k</b></div><div class="kpi"><span>Lowest Cash</span><b>$3.5k</b></div><div class="kpi"><span>Ending Cash</span><b>$22.4k</b></div><div class="kpi"><span>Days Runway</span><b>21</b></div><div class="kpi"><span>Funding Gap</span><b>$6.5k</b></div><div class="kpi"><span>Planning Amount</span><b>$7.5k</b></div><div class="kpi"><span>Red Weeks</span><b>2</b></div><div class="kpi"><span>Next PO</span><b>Week 4</b></div></div><div class="alert">Warning: sales can be growing while usable cash tightens because inventory, ads, debt, and payout timing stack together.</div></aside></section>
 
-    <div class="actions">
-      <a class="button" href="README.md">Open README</a>
-      <a class="button secondary" href="../index.html">Project Home</a>
-    </div>
+<section class="section light" id="tabs"><div class="section-head center"><span class="eyebrow">Workbook architecture</span><h2>Ten tabs. One job: make cash risk impossible to ignore.</h2><p>The planner is simple enough for non-finance sellers, but structured enough to produce useful cash-flow decisions.</p></div><div class="grid">
+<article class="card"><div class="icon">🚦</div><h3>Dashboard</h3><p>Current cash, safe buffer, ending cash, lowest cash point, runway, funding gap, inventory date, and alerts.</p></article><article class="card"><div class="icon">🛒</div><h3>Revenue Forecast</h3><p>Forecast Shopify, Amazon, Etsy, TikTok Shop, Walmart/WooCommerce, and other revenue by week.</p></article><article class="card"><div class="icon">🧾</div><h3>Expense Forecast</h3><p>Separate COGS, platform fees, shipping, payroll, software, taxes, and operating expenses.</p></article><article class="card"><div class="icon">📦</div><h3>Inventory Planner</h3><p>Plan SKU-level restocks using units, sales velocity, lead time, reorder point, unit cost, and purchase week.</p></article><article class="card"><div class="icon">📣</div><h3>Ad Spend Planner</h3><p>Track Meta, Google, Amazon, TikTok, influencer, and affiliate spend against revenue and cash runway.</p></article><article class="card"><div class="icon">💳</div><h3>Debt & Financing</h3><p>Map loans, advances, credit cards, lines, platform financing, weekly payments, and payment stacking.</p></article><article class="card"><div class="icon">📈</div><h3>Cash Flow Forecast</h3><p>The main 13-week engine: beginning cash, cash in, cash out, net cash flow, ending cash, gap, and status.</p></article><article class="card"><div class="icon">🚨</div><h3>Funding Trigger Alerts</h3><p>Plain-English alerts when forecast conditions suggest a possible working-capital timing gap.</p></article><article class="card"><div class="icon">🧠</div><h3>AI Automation Prompts</h3><p>Ready-to-use prompts for weekly reviews, scenario planning, funding gap diagnosis, and cash preservation.</p></article></div></section>
 
-    <section>
-      <h2>Purpose</h2>
-      <p class="note">This folder documents the spreadsheet product behind the lead magnet and GPT workflow.</p>
-    </section>
+<section class="section dark" id="formulas"><div class="section-head"><span class="eyebrow">Formula engine</span><h2>The boring math that prevents exciting emergencies.</h2><p>These are the core formulas behind the planner. They are not fancy. That is the point.</p></div><div class="formula-grid"><div class="formula"><b>Core cash equation</b><code>Beginning Cash + Cash Inflows - Cash Outflows = Ending Cash</code><p>Ending cash from one week becomes beginning cash for the next week.</p></div><div class="formula"><b>Funding Gap</b><code>=MAX(0, Minimum Cash Threshold - Lowest Ending Cash)</code><p>Shows how far the forecast dips below the seller’s safe cash buffer.</p></div><div class="formula"><b>Suggested Planning Amount</b><code>=Funding Gap × (1 + Cushion %)</code><p>Adds a cushion for messy data, timing risk, and ugly little ecommerce surprises.</p></div><div class="formula"><b>Days Cash Runway</b><code>=Ending Cash / Average Daily Cash Out</code><p>Turns cash balance into time, because bills care about dates.</p></div><div class="formula"><b>Cash Flow Status</b><code>Critical if cash &lt; 0
+Red if cash &lt; threshold
+Yellow if runway &lt; target
+Watch if net cash flow &lt; 0
+OK otherwise</code><p>Converts spreadsheet rows into a plain-English operating signal.</p></div><div class="formula"><b>Inventory Purchases by Week</b><code>=SUMIF(Planned Order Week, Current Week, Purchase Cost)</code><p>Pulls purchase orders into the exact week they hit cash.</p></div></div></section>
 
-    <section>
-      <h2>Files</h2>
-      <div class="grid">
-        <a class="card" href="90-day-ecommerce-cash-flow-planner-spec.md">
-          <span class="file-name">90-day-ecommerce-cash-flow-planner-spec.md</span>
-          <span class="file-desc">Workbook architecture, tabs, columns, usage logic, and seller workflow.</span>
-        </a>
-        <a class="card" href="formulas.md">
-          <span class="file-name">formulas.md</span>
-          <span class="file-desc">Google Sheets / Excel formulas for the dashboard, forecasts, inventory, ads, debt, cash flow, and alerts.</span>
-        </a>
-        <a class="card" href="conditional-formatting-rules.md">
-          <span class="file-name">conditional-formatting-rules.md</span>
-          <span class="file-desc">Warning colors and formatting logic for cash flow, inventory, ads, debt, and funding alerts.</span>
-        </a>
-        <a class="card" href="sample-data.md">
-          <span class="file-name">sample-data.md</span>
-          <span class="file-desc">Fictional ecommerce seller sample data for testing and demos.</span>
-        </a>
-      </div>
-    </section>
+<section class="section light"><div class="section-head"><span class="eyebrow">Warning system</span><h2>Pretty colors are useless unless they punch you in the face at the right moment.</h2><p>Conditional formatting should make cash-flow problems visually obvious without turning every cell into a circus.</p></div><div class="warning-row"><div class="warning ok">OK</div><div class="warning watch">Watch</div><div class="warning yellow">Yellow</div><div class="warning review">Review</div><div class="warning red">Red</div><div class="warning critical">Critical</div><div class="warning missing">Missing</div></div><div class="grid" style="margin-top:18px"><article class="card"><h3>Cash Negative</h3><p>Dark red. White bold text. Stop scrolling and deal with it.</p></article><article class="card"><h3>Below Threshold</h3><p>Red alert when ending cash drops below the seller’s minimum safe buffer.</p></article><article class="card"><h3>Ad Spend High</h3><p>Orange/yellow when ad spend runs hot against net revenue or cash flow.</p></article><article class="card"><h3>Restock Now</h3><p>Red when weeks of cover falls inside supplier lead time plus buffer.</p></article><article class="card"><h3>Missing Inputs</h3><p>Gray/purple when required assumptions are blank or unreliable.</p></article><article class="card"><h3>Debt Pressure</h3><p>Orange when 90-day payments are high versus net revenue.</p></article></div></section>
 
-    <section>
-      <h2>Recommended Usage</h2>
-      <ul>
-        <li>Use these files to rebuild or troubleshoot the spreadsheet.</li>
-<li>Upload to GitHub as documentation and to Drive as support/reference material.</li>
-<li>Only upload to CustomGPT knowledge if the GPT must explain or recreate the spreadsheet.</li>
-      </ul>
-    </section>
+<section class="section light"><div class="section-head"><span class="eyebrow">Sample data</span><h2>Thread & Timber Co. shows the trap in plain English.</h2><p>Use the fictional sample data to test formulas, create screenshots, build walkthroughs, and show sellers what a completed forecast looks like.</p></div><div class="profile"><div class="profile-box"><h3>Sample profile</h3><div class="chips"><span class="chip">Shopify 60%</span><span class="chip">Amazon 25%</span><span class="chip">Etsy 10%</span><span class="chip">TikTok Shop 5%</span><span class="chip">Beginning Cash $25,000</span><span class="chip">Minimum Threshold $10,000</span><span class="chip">Planning Cushion 15%</span></div></div><div class="profile-box"><h3>Stress event</h3><p>Week 4 inventory purchase hits. Week 5 and Week 6 cash tightens. Week 7 ads increase again. Payment obligations continue weekly. Translation: revenue grows while cash gets squeezed by timing.</p></div></div></section>
 
-    <footer>
-      <p><strong>Upload rule:</strong> GitHub is the canonical source. Google Drive is the working/editing layer. CustomGPT receives approved release files only.</p>
-    </footer>
-  </main>
+<section class="section dark"><div class="section-head center"><span class="eyebrow">Weekly workflow</span><h2>Twenty minutes a week beats a month of financial cleanup.</h2><p>Update the boring numbers before the business turns into a scavenger hunt for cash.</p></div><div class="workflow"><div class="step">Update actual cash</div><div class="step">Update revenue</div><div class="step">Update payout expectations</div><div class="step">Update expenses</div><div class="step">Update inventory and POs</div><div class="step">Update ad spend</div><div class="step">Update debt payments</div><div class="step">Review forecast</div><div class="step">Review funding alerts</div><div class="step">Paste results into GPT</div></div></section>
+
+<section class="section dark final"><div><span class="eyebrow">Next move</span><h2>Use the planner first. Then make the GPT tell the truth.</h2><p>The spreadsheet gives the numbers structure. The prompt library turns that structure into weekly decisions.</p></div><div class="cta"><a class="btn gold" href="../prompts/">Open Prompt Library</a><a class="btn" href="../knowledge/">View Docs</a><a class="btn" href="../marketing/">Marketing Kit</a></div></section>
+</main>
+<footer class="footer"><div class="footer-inner"><p>This planner is for cash flow planning and decision support. It is not legal, tax, accounting, lending, investment, or financial advice. It is not a loan approval, qualification decision, eligibility determination, or funding guarantee.</p><nav class="footer-links" aria-label="Footer navigation"><a href="../">Home</a><a href="../spreadsheet/">90-Day Planner</a><a href="../prompts/">Prompt Library</a><a href="../knowledge/">Knowledge Base</a><a href="../marketing/">Marketing Assets</a><a href="../releases/v1.0/">Release v1.0</a><a href="../embed.html">Embed Version</a></nav></div></footer>
 </body>
 </html>
