@@ -47,56 +47,6 @@ This repository is designed around several asset types:
 | `marketing/` | Lead magnet description, landing page copy, email swipe copy, and video content plan |
 | `releases/v1.0/` | Upload manifest, release checklist, and version-control guidance |
 
-## Recommended Repository Structure
-
-```text
-ecommerce-cash-flow/
-├── index.html
-├── embed.html
-├── README.md
-├── docs/
-│   └── embed-code.md
-├── knowledge/
-│   ├── index.html
-│   ├── README.md
-│   ├── 01-gpt-operating-instructions.md
-│   ├── 02-minimum-forecast-intake-form.md
-│   ├── 03-ecommerce-cash-flow-forecasting-logic.md
-│   ├── 04-messy-financial-data-handling-guide.md
-│   ├── 05-forecast-output-templates.md
-│   ├── 06-ecommerce-risk-scoring-framework.md
-│   ├── 07-funding-trigger-alert-framework.md
-│   ├── 08-inventory-restock-recommendation-guide.md
-│   ├── 09-ecommerce-platform-data-guide.md
-│   └── 10-plainspoken-operator-voice-guide.md
-├── spreadsheet/
-│   ├── index.html
-│   ├── README.md
-│   ├── 90-day-ecommerce-cash-flow-planner-spec.md
-│   ├── formulas.md
-│   ├── conditional-formatting-rules.md
-│   └── sample-data.md
-├── prompts/
-│   ├── index.html
-│   ├── README.md
-│   ├── weekly-analysis-prompts.md
-│   ├── scenario-planning-prompts.md
-│   └── funding-memo-prompts.md
-├── marketing/
-│   ├── index.html
-│   ├── README.md
-│   ├── lead-magnet-description.md
-│   ├── landing-page-copy.md
-│   ├── email-swipe-copy.md
-│   └── video-content-plan.md
-└── releases/
-    └── v1.0/
-        ├── index.html
-        ├── README.md
-        ├── customgpt-upload-manifest.md
-        └── upload-checklist.md
-```
-
 ## CustomGPT Knowledge Base Files
 
 The `knowledge/` folder contains the core files intended for the Ecommerce Cash Flow Forecaster GPT knowledge base.
