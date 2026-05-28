@@ -2,7 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "git": {
-    "deploymentEnabled": false
-  },
-  "ignoreCommand": "node -e \"process.exit(0)\""
+    "deploymentEnabled": true
+  }
 }
