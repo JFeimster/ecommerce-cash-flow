@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Release Package v1.0 | Ecommerce Cash Flow</title>
+  <meta name="description" content="Manifest and checklist for the first release of the Ecommerce Cash Flow Forecaster GPT knowledge system.">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171b22;
+      --panel-2: #1f2530;
+      --text: #f4f7fb;
+      --muted: #aab4c3;
+      --accent: #f5b84b;
+      --line: rgba(255,255,255,.12);
+      --good: #62d394;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(245,184,75,.18), transparent 34rem), var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin: .45rem 0 1rem;
+      max-width: 900px;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 780px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0 36px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #111;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    section {
+      margin-top: 34px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      display: block;
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      min-height: 130px;
+    }
+    .card:hover {
+      border-color: rgba(245,184,75,.7);
+      background: var(--panel-2);
+    }
+    .file-name {
+      display: block;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .file-desc {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+    li + li { margin-top: 8px; }
+    .note {
+      color: var(--muted);
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+    footer {
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    code {
+      color: var(--good);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Ecommerce Cash Flow Forecaster GPT</p>
+    <h1>Release Package v1.0</h1>
+    <p class="lede">Manifest and checklist for the first release of the Ecommerce Cash Flow Forecaster GPT knowledge system.</p>
+
+    <div class="actions">
+      <a class="button" href="README.md">Open README</a>
+      <a class="button secondary" href="../../index.html">Project Home</a>
+    </div>
+
+    <section>
+      <h2>Purpose</h2>
+      <p class="note">This folder documents what belongs in the v1.0 release and how to upload/test it.</p>
+    </section>
+
+    <section>
+      <h2>Files</h2>
+      <div class="grid">
+        <a class="card" href="customgpt-upload-manifest.md">
+          <span class="file-name">customgpt-upload-manifest.md</span>
+          <span class="file-desc">Upload strategy, required files, optional files, GPT instructions summary, and test cases.</span>
+        </a>
+        <a class="card" href="upload-checklist.md">
+          <span class="file-name">upload-checklist.md</span>
+          <span class="file-desc">Pre-upload, Drive, GitHub, CustomGPT, compliance, and post-upload testing checklist.</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommended Usage</h2>
+      <ul>
+        <li>Use this folder as the release control point for v1.0.</li>
+<li>Do not upload release files to the GPT knowledge base unless you want the GPT to explain its own deployment package.</li>
+<li>Use the checklist before updating CustomGPT knowledge files.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>Upload rule:</strong> GitHub is the canonical source. Google Drive is the working/editing layer. CustomGPT receives approved release files only.</p>
+    </footer>
+  </main>
+</body>
+</html>
