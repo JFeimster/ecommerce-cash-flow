@@ -1,33 +1,28 @@
-# Ecommerce Cash Flow Forecaster GPT
+# Spreadsheet Documentation
 
-Repo-ready static assets for a 90-day ecommerce cash flow forecasting GPT.
+Build specs, formulas, conditional formatting rules, and sample data for the 90-Day Ecommerce Cash Flow Planner.
+
+## Purpose
+
+This folder documents the spreadsheet product behind the lead magnet and GPT workflow.
 
 ## Files
 
-- `index.html` — full landing page for the tool.
-- `embed.html` — embeddable intake/preview version sized at **920px wide × 1180px tall**.
-- `docs/embed-code.md` — iframe snippets for Wix, Webflow, WordPress, Notion-style embeds, and static sites.
-- `knowledge/gpt-instructions.md` — Custom GPT instruction draft.
-- `knowledge/minimum-forecast-intake.md` — upfront intake framework.
+- `90-day-ecommerce-cash-flow-planner-spec.md` — Workbook architecture, tabs, columns, usage logic, and seller workflow.
+- `formulas.md` — Google Sheets / Excel formulas for the dashboard, forecasts, inventory, ads, debt, cash flow, and alerts.
+- `conditional-formatting-rules.md` — Warning colors and formatting logic for cash flow, inventory, ads, debt, and funding alerts.
+- `sample-data.md` — Fictional ecommerce seller sample data for testing and demos.
 
-## Suggested GitHub Pages setup
+## Recommended Usage
 
-1. Create a new GitHub repo.
-2. Upload these files to the repo root.
-3. Go to **Settings → Pages**.
-4. Set source to `main` branch and root folder.
-5. Visit the generated GitHub Pages URL.
+- Use these files to rebuild or troubleshoot the spreadsheet.
+- Upload to GitHub as documentation and to Drive as support/reference material.
+- Only upload to CustomGPT knowledge if the GPT must explain or recreate the spreadsheet.
 
-## Embed size
+## Repository Context
 
-Recommended iframe dimensions:
+This folder is part of the `JFeimster/ecommerce-cash-flow` project for the Ecommerce Cash Flow Forecaster GPT and the 90-Day Ecommerce Cash Flow Planner.
 
-```html
-<iframe src="https://YOUR-USERNAME.github.io/YOUR-REPO/embed.html" width="920" height="1180" style="border:0;border-radius:24px;max-width:100%;"></iframe>
-```
+## Upload Rule
 
-The embed is intentionally not wider than 940px and not taller than 1200px.
-
-## Customization
-
-Replace the placeholder CTA URL in `index.html` with your Custom GPT link when ready.
+Use GitHub as the canonical version-controlled source, Google Drive as the editable/shareable workspace, and CustomGPT uploads as approved release builds only.

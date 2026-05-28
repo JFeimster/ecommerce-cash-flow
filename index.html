@@ -1,26 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ecommerce Cash Flow Forecaster GPT</title>
-<meta name="description" content="A 90-day ecommerce cash flow forecasting GPT for sellers who need to spot cash gaps, inventory pressure, and working capital needs before cash gets tight." />
-<style>
-:root{--bg:#f7f5f0;--paper:#fffdf8;--ink:#1f2933;--muted:#64748b;--line:#e7e0d4;--blue:#2563eb;--green:#0f766e;--orange:#ea580c;--red:#dc2626;--dark:#101828;--shadow:0 20px 60px rgba(15,23,42,.10)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#e0f2fe 0,#f7f5f0 34%,#fff7ed 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}.shell{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:54px}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--green));display:grid;place-items:center;color:white;box-shadow:var(--shadow)}.nav a{color:var(--muted);text-decoration:none;font-weight:650}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 18px;font-weight:800;text-decoration:none;border:1px solid var(--line);color:var(--dark);background:white}.button.primary{background:var(--dark);color:white;border-color:var(--dark)}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:13px;font-weight:800}.hero h1{font-size:clamp(42px,7vw,72px);line-height:.95;letter-spacing:-.055em;margin:18px 0}.lead{font-size:20px;color:#475569;max-width:680px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.panel{background:rgba(255,253,248,.86);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:24px}.forecast-card{min-height:520px}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}.metric{background:white;border:1px solid var(--line);border-radius:18px;padding:16px}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:850}.value{font-size:27px;font-weight:900;margin-top:4px}.risk{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line)}.pill{border-radius:999px;padding:5px 10px;font-size:12px;font-weight:900}.pill.green{background:#dcfce7;color:#166534}.pill.orange{background:#ffedd5;color:#9a3412}.pill.red{background:#fee2e2;color:#991b1b}.bar{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--orange),var(--red));width:72%}section{margin-top:70px}.section-head{max-width:740px}.section-head h2{font-size:38px;letter-spacing:-.035em;line-height:1.05;margin:0 0 12px}.section-head p{color:var(--muted);font-size:18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}.card h3{margin:0 0 8px}.card p,.card li{color:#526173}.icon{font-size:28px;margin-bottom:12px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.step{background:white;border:1px solid var(--line);border-radius:20px;padding:18px}.step b{display:block;margin-bottom:8px}.quote{background:#101828;color:white;border-radius:28px;padding:34px;margin-top:28px}.quote p{font-size:24px;line-height:1.35;margin:0}.embed-preview{background:#0f172a;border-radius:28px;padding:18px;box-shadow:var(--shadow);margin-top:24px}.embed-frame{background:white;border-radius:20px;min-height:520px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden}.mini-table th,.mini-table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px}.mini-table th{background:#f8fafc}.footer{margin-top:70px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:24px}@media(max-width:860px){.hero,.embed-frame{grid-template-columns:1fr}.grid,.flow{grid-template-columns:1fr}.forecast-card{min-height:auto}.nav{align-items:flex-start;flex-direction:column}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spreadsheet Documentation | Ecommerce Cash Flow</title>
+  <meta name="description" content="Build specs, formulas, conditional formatting rules, and sample data for the 90-Day Ecommerce Cash Flow Planner.">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171b22;
+      --panel-2: #1f2530;
+      --text: #f4f7fb;
+      --muted: #aab4c3;
+      --accent: #f5b84b;
+      --line: rgba(255,255,255,.12);
+      --good: #62d394;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(245,184,75,.18), transparent 34rem), var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin: .45rem 0 1rem;
+      max-width: 900px;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 780px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0 36px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #111;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+    section {
+      margin-top: 34px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      display: block;
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      min-height: 130px;
+    }
+    .card:hover {
+      border-color: rgba(245,184,75,.7);
+      background: var(--panel-2);
+    }
+    .file-name {
+      display: block;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .file-desc {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+    li + li { margin-top: 8px; }
+    .note {
+      color: var(--muted);
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+    }
+    footer {
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    code {
+      color: var(--good);
+    }
+  </style>
 </head>
 <body>
-<main class="shell">
-<nav class="nav"><div class="brand"><div class="logo">CF</div><span>Ecommerce Cash Flow Forecaster GPT</span></div><a class="button" href="embed.html">View embed</a></nav>
-<section class="hero">
-<div><span class="eyebrow">90-day cash flow forecasting for sellers</span><h1>Know when cash gets tight before it becomes a crisis.</h1><p class="lead">A plainspoken GPT assistant that turns sales, ad spend, inventory, expense, bank, and marketplace reports into a 90-day cash flow forecast with working capital alerts and restock warnings.</p><div class="cta"><a class="button primary" href="#get-started">Launch the GPT</a><a class="button" href="#embed">Embed on your site</a></div></div>
-<aside class="panel forecast-card"><span class="eyebrow">Sample forecast</span><div class="metric-grid"><div class="metric"><div class="label">Cash low point</div><div class="value">$18.4k</div></div><div class="metric"><div class="label">Runway</div><div class="value">42 days</div></div><div class="metric"><div class="label">Funding gap</div><div class="value">$32k</div></div><div class="metric"><div class="label">Confidence</div><div class="value">Medium</div></div></div><div class="risk"><span>Inventory risk</span><span class="pill orange">High</span></div><div class="risk"><span>Ad spend risk</span><span class="pill orange">Medium</span></div><div class="risk"><span>Debt-service risk</span><span class="pill green">Low</span></div><p class="label" style="margin-top:18px">90-day pressure level</p><div class="bar"><span></span></div></aside>
-</section>
-<section><div class="section-head"><h2>Built for ecommerce operators, not finance jargon.</h2><p>The GPT asks for a minimum forecast intake, analyzes uploaded files, then explains the cash problem in plain English.</p></div><div class="grid"><article class="card"><div class="icon">📈</div><h3>Forecast cash runway</h3><p>Project daily or weekly cash balances using sales velocity, payout timing, expenses, debt, ads, and inventory commitments.</p></article><article class="card"><div class="icon">📦</div><h3>Spot inventory pressure</h3><p>Warn when restocking too late risks stockouts or restocking too early traps too much cash in inventory.</p></article><article class="card"><div class="icon">💸</div><h3>Flag funding triggers</h3><p>Identify working capital gaps without turning the experience into a pushy loan pitch.</p></article></div></section>
-<section><div class="section-head"><h2>How it works</h2></div><div class="flow"><div class="step"><b>1. Intake</b><span>Cash, revenue, margin, ads, inventory, debt, and buffer.</span></div><div class="step"><b>2. Upload</b><span>Shopify, Amazon, TikTok, Etsy, Stripe, PayPal, P&L, bank files.</span></div><div class="step"><b>3. Forecast</b><span>Conservative, Base, and Optimistic 90-day scenarios.</span></div><div class="step"><b>4. Act</b><span>Cut costs, adjust ads, delay purchases, restock, or explore funding.</span></div></div></section>
-<section id="embed"><div class="section-head"><h2>Website embed version included</h2><p>The repo includes an embeddable version sized at 920px wide by 1180px tall for landing pages, Wix, Webflow, WordPress, and Notion-style embeds.</p></div><div class="embed-preview"><div class="embed-frame"><div><h3>Embed dimensions</h3><p>Recommended iframe size: <strong>920 × 1180</strong>. It can also be used responsively with min-height: 1180px.</p><pre>&lt;iframe src="embed.html" width="920" height="1180"&gt;&lt;/iframe&gt;</pre></div><table class="mini-table"><tr><th>Input</th><th>Status</th></tr><tr><td>Current cash</td><td>Required</td></tr><tr><td>Gross margin</td><td>Required</td></tr><tr><td>Inventory plan</td><td>Required</td></tr><tr><td>Uploaded files</td><td>Optional</td></tr></table></div></div></section>
-<section id="get-started"><div class="quote"><p>“Your sales may be growing, but cash can still get squeezed if inventory and ad spend pull money out faster than payouts come in.”</p></div></section>
-<p class="footer">Forecasts are estimates based on uploaded data and user assumptions. This tool does not provide legal, tax, accounting, lending, investment, or financial advice.</p>
-</main>
+  <main>
+    <p class="eyebrow">Ecommerce Cash Flow Forecaster GPT</p>
+    <h1>Spreadsheet Documentation</h1>
+    <p class="lede">Build specs, formulas, conditional formatting rules, and sample data for the 90-Day Ecommerce Cash Flow Planner.</p>
+
+    <div class="actions">
+      <a class="button" href="README.md">Open README</a>
+      <a class="button secondary" href="../index.html">Project Home</a>
+    </div>
+
+    <section>
+      <h2>Purpose</h2>
+      <p class="note">This folder documents the spreadsheet product behind the lead magnet and GPT workflow.</p>
+    </section>
+
+    <section>
+      <h2>Files</h2>
+      <div class="grid">
+        <a class="card" href="90-day-ecommerce-cash-flow-planner-spec.md">
+          <span class="file-name">90-day-ecommerce-cash-flow-planner-spec.md</span>
+          <span class="file-desc">Workbook architecture, tabs, columns, usage logic, and seller workflow.</span>
+        </a>
+        <a class="card" href="formulas.md">
+          <span class="file-name">formulas.md</span>
+          <span class="file-desc">Google Sheets / Excel formulas for the dashboard, forecasts, inventory, ads, debt, cash flow, and alerts.</span>
+        </a>
+        <a class="card" href="conditional-formatting-rules.md">
+          <span class="file-name">conditional-formatting-rules.md</span>
+          <span class="file-desc">Warning colors and formatting logic for cash flow, inventory, ads, debt, and funding alerts.</span>
+        </a>
+        <a class="card" href="sample-data.md">
+          <span class="file-name">sample-data.md</span>
+          <span class="file-desc">Fictional ecommerce seller sample data for testing and demos.</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommended Usage</h2>
+      <ul>
+        <li>Use these files to rebuild or troubleshoot the spreadsheet.</li>
+<li>Upload to GitHub as documentation and to Drive as support/reference material.</li>
+<li>Only upload to CustomGPT knowledge if the GPT must explain or recreate the spreadsheet.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><strong>Upload rule:</strong> GitHub is the canonical source. Google Drive is the working/editing layer. CustomGPT receives approved release files only.</p>
+    </footer>
+  </main>
 </body>
 </html>
