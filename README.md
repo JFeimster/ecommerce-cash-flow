@@ -1,3 +1,5 @@
+<img width="1774" height="887" alt="Image" src="https://github.com/user-attachments/assets/0ad36951-856a-476a-b5ff-6bc85eef4580" />
+
 # Ecommerce Cash Flow Forecaster GPT
 
 Repo-ready asset system for the **Ecommerce Cash Flow Forecaster GPT** and **The 90-Day Ecommerce Cash Flow Planner**.
